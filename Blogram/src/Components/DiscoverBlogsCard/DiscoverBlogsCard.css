@@ -1,0 +1,49 @@
+/* discoverPostCard.css */
+.discover-card .card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+ .discover-card .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  
+  .tags .badge {
+    font-size: 0.875rem;
+    margin-right: 0.2rem;
+  }
+
+  /* BlogPostCard.css */
+.discover-card {
+  width: 80vw; 
+  max-height: 570px; 
+  overflow-y: scroll; 
+}
+
+@media (max-width: 768px) {
+  .discover-card {
+    width: 90vw; /* Adjust width for smaller screens */
+  }
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.tags .badge {
+  font-size: 0.875rem;
+  margin-right: 0.2rem;
+}
+
+  

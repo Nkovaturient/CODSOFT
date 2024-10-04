@@ -1,0 +1,61 @@
+
+  .blog-results .blog-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+  }
+  
+  .blog-results .blog-card h4 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .blog-results .blog-card a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .pagination-controls button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pagination-controls span {
+    font-weight: bold;
+  }
+  
+  .feeds-search-area {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .filter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  @media (max-width: 768px) {
+    .filters {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+  

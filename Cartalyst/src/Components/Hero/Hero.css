@@ -1,0 +1,23 @@
+.hero-container{
+    margin-top: 5rem;
+    padding: 4.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+}
+.hero-container h1{
+    font-size: 2.8vw;
+}
+.hero-container p{
+    font-size:24px;
+    width: 55%;
+    line-height: 0.89cm;
+    font-weight: 500;
+}
+.hero-container em{
+    font-size:24px;
+}

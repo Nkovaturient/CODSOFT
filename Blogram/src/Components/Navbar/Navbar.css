@@ -1,0 +1,11 @@
+.navbar-container{
+    font-size: max(1.86vw, 18px);
+}
+.nav .nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+ .nav .nav-link:hover{
+   color: rgb(202, 202, 9);
+   text-decoration: none; 
+}

@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  margin: 2.4rem;
+  padding: 3.1rem;
+  background: url('./logo.jpg'); 
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+.app{
+  
+  position: relative;
+}
