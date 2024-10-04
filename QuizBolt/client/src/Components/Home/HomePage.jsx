@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
 import Features from "../Features/Features";
-import VideoStream from "../Features/VideoStream";
+import VideoStream from "../Features/videoStream.jsx";
 import { StoreContext } from "../../ContextAPI/ContextAPI";
 import { toast } from "react-toastify";
 
