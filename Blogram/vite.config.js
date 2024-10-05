@@ -6,10 +6,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': {
-        target: 'http://localhost:8888/.netlify/functions', 
+      '/.netlify/functions/fetchBlogs': {
+        target: 'http://localhost:8888', 
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/.netlify\/functions/, ''),
       }
     }
   }
