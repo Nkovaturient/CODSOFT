@@ -22,20 +22,19 @@ const BlogFilter = () => {
   const API_KEY = Config.TWINGLY_API; 
 
   const baseURL = import.meta.env.MODE === 'production'
-  ? 'https://api.twingly.com' 
-  : '/api/blog/search/api/v3/search';  
+  ? '/.netlify/functions/fetchBlogs' 
+  : '/api';  
 
 const handleSearch = async () => {
   setLoading(true);
   setError(null);
   try {
-    const response = await axios.get(`${baseURL}`, {
+    const response = await axios.get(`${baseURL}/blog/search/api/v3/search`, {
       params: {
-        searchQuery,
-        sort,
-        sortOrder,
-        pageSize
-      }
+        apikey: API_KEY,  
+        q: `${searchQuery} sort:${sort} sort-order:${sortOrder} page-size:${pageSize}`,
+        format: 'json',
+      },
     });
 
     if (response.data) {
