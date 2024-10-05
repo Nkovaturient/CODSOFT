@@ -2,7 +2,6 @@
 Repository comprising the tasks that I have accomplished as part of  ReactJS Developer internship at CODSOFT
 ## 🎐 Codsoft_1-Blogram : Blog Platform
 - **Status**: [![Netlify Status](https://api.netlify.com/api/v1/badges/d068a5b3-f8b3-4d20-a87c-bf5640b95a69/deploy-status?branch=main)](https://app.netlify.com/sites/blogramm/deploys) 
-- **Live**: [Blogram](https://blogramm.netlify.app/)
 
 ![codsoft1](https://github.com/user-attachments/assets/47d3840d-dc69-4cd8-a765-67140f895ddb)
 
