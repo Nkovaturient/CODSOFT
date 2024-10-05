@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://api.twingly.com', 
+        target: 'http://localhost:8888/.netlify/functions', 
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       }

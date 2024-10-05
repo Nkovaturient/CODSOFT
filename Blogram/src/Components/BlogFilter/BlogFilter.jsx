@@ -20,38 +20,40 @@ const BlogFilter = () => {
   const [totalResults, setTotalResults] = useState(0); 
 
   const API_KEY = Config.TWINGLY_API; 
+
   const baseURL = import.meta.env.MODE === 'production'
-    ? 'https://api.twingly.com'  
-    : '/api';  
+  ? '/.netlify/functions/fetchBlogs' 
+  : '/api/blog/search/api/v3/search';  
 
-
-  const handleSearch = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await axios.get(`${baseURL}/blog/search/api/v3/search`, {
-        params: {
-          apikey: API_KEY,
-          q: `${searchQuery} sort:${sort} sort-order:${sortOrder} page-size:${pageSize}`,
-          format: 'json',
-        },
-      });
-
-      if (response.data) {
-        console.log(response.data);
-        setSearchResults(response.data.documents);
-        setTotalResults(response.data.number_of_matches_returned); 
-        toast.success('Blogs fetched successfully!', { theme: 'colored' });
-      } else {
-        toast.info('No results found', { theme: 'dark' });
+const handleSearch = async () => {
+  setLoading(true);
+  setError(null);
+  try {
+    const response = await axios.get(`${baseURL}`, {
+      params: {
+        searchQuery,
+        sort,
+        sortOrder,
+        pageSize
       }
-    } catch (err) {
-      setError('Failed to fetch blogs. Please try again.');
-      console.error(err);
-    } finally {
-      setLoading(false);
+    });
+
+    if (response.data) {
+      console.log(response.data);
+      setSearchResults(response.data.documents);
+      setTotalResults(response.data.number_of_matches_returned);
+      toast.success('Blogs fetched successfully!', { theme: 'colored' });
+    } else {
+      toast.info('No results found', { theme: 'dark' });
     }
-  };
+  } catch (err) {
+    setError('Failed to fetch blogs. Please try again.');
+    console.error(err);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   // useEffect(()=>{
   //   console.log(searchQuery, '--', sortOrder, '--', pageSize, '--', sort)
