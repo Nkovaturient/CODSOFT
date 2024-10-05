@@ -17,10 +17,6 @@ const VideoStream = ({  productName, description, img, learnMore}) => {
           <a style={{color: '#ffaa00'}} href='#'>Try Demo <i className="fa-solid fa-arrow-right"></i></a>
           <a style={{color: '#ffaa00', marginLeft: '50px'}} href={learnMore}>Learn More <i className="fa-solid fa-arrow-right"></i></a>
           </div>
-          {/* <div className='mt-3'>
-          <a href=''> <img src='media/images/googlePlayBadge.svg' alt="gPlay" /></a>
-          <a href='' style={{marginLeft: '50px'}}><img src='media/images/appstoreBadge.svg' alt="appStore" /></a>
-          </div> */}
         </div>
       </div>
     </div>

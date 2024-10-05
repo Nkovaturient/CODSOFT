@@ -6,6 +6,7 @@ import Home from './pages/Home/Home'
 import './index.css'
 import Cart from './pages/Cart/Cart'
 import ScrollToTop from './Components/ScrollToTop'
+import CartHistory from './Components/CartHistory'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/cart' element={<Cart />} />
+      <Route path='/cart/history' element={<CartHistory />} />
     </Routes>
     
     </div>

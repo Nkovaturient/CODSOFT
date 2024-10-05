@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './Navbar.css'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { StoreContext } from '../../ContextApi/ContextApi'
 import { useSnackbar } from 'notistack'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  faCartShopping, faContactBook, faHistory, faHomeAlt } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
-  const{cartItem}=useContext(StoreContext);
+  const{cartItem, orderHistory}=useContext(StoreContext);
   const[cartActive, setCartActive]=useState(false);
   const {enqueueSnackbar }=useSnackbar();
  
@@ -30,16 +32,20 @@ const Navbar = () => {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="nav-menu collapse navbar-collapse" id="navbarNavAltMarkup">
-    <ul className="nav justify-content-center">
+    <ul className="nav justify-content-center mx-auto">
   <Link className="nav-item" to={'/'}>
-   Home
+   <FontAwesomeIcon icon={faHomeAlt} />
   </Link>
   <Link className="nav-item cart-icon" to={'/cart'}>
-    {cartActive ? "🛒" : "Cart"}
+    {cartActive ? <FontAwesomeIcon icon={faCartShopping} /> : "Cart"}
   </Link>
  
-    <a className="nav-item " href="#footer">Contact Us</a>
-  
+    <a className="nav-item " href="#footer"><FontAwesomeIcon icon={faContactBook} /></a>
+    {orderHistory &&
+    <Link className="nav-item cart-icon" to={'/cart/history'}>
+      <FontAwesomeIcon icon={faHistory} /> 
+  </Link>
+}
 </ul>
     </div>
   </div>

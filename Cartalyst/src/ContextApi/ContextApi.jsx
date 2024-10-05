@@ -5,6 +5,7 @@ export const StoreContext=createContext(null);
 
 const StoreContextProvider=(props)=>{
     const[cartItem, setCartItem]=useState({});
+    const[orderHistory, setOrderHistory]=useState(false);
 
     const addToCart=(id)=>{
         if(!cartItem[id]){
@@ -40,6 +41,7 @@ const StoreContextProvider=(props)=>{
         addToCart,
         removeFromCart,
         getTotalCartAmount,
+        orderHistory, setOrderHistory,
     }
 
     return (

@@ -53,7 +53,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="features-container mt-20 my-4 p-8" id="features">
+      <div className="features-container mt-20 my-4 " id="features">
       
       <Features
         img={"./img2.png"}

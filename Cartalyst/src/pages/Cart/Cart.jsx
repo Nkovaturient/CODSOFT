@@ -1,16 +1,25 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { StoreContext } from "../../ContextApi/ContextApi";
 import { food_list } from "../../assets/assets";
 import "./Cart.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
-import {useSnackbar} from 'notistack'
+import { useSnackbar} from 'notistack'
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { cartItem, removeFromCart, getTotalCartAmount } =
+  const { cartItem, removeFromCart, getTotalCartAmount, setOrderHistory } =
     useContext(StoreContext);
    
+    const {enqueueSnackbar }=useSnackbar();
+    const navigate=useNavigate();
+   
 
+    const handleCheckout=()=>{
+      enqueueSnackbar(`Hurray! Your Order is Placed!`, {variant: 'success'} );
+      setOrderHistory(true);
+      navigate("/cart/history");
+    }
 
 
   return (
@@ -68,7 +77,8 @@ const Cart = () => {
                 </b>
               </div>
             </div>
-            <button disabled={getTotalCartAmount() === 0 ? true : false}>
+            <button onClick={handleCheckout}
+            disabled={getTotalCartAmount() === 0 ? true : false}>
               Proceed to Checkout
             </button>
           </div>

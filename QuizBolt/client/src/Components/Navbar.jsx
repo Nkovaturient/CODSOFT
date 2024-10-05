@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="navbar text-3xl text-bold flex justify-evenly p-4">
           <div className="navbar-left flex gap-4">
             <h4 className="text-6xl nav-item">Quiz</h4>
-            <img src="logo1.png" alt="QuizBolt" className="header-logo" />
+            <img src="/logo1.png" alt="QuizBolt" className="header-logo" />
           </div>
 
           <ul className={`navbar-menu text-center flex gap-20 py-4`}>

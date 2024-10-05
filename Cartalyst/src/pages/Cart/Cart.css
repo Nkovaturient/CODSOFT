@@ -69,6 +69,20 @@
     border-radius: 4px;
     cursor: pointer;
 }
+.order-total{
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    align-items: flex-end;
+    
+}
+.order-amount{
+    border: 2px solid #c9c9c9;
+    background-color: #262d79;
+    color: #e2e2e2;
+    padding: 1.67rem;
+
+}
 
 @media (max-width:750px) {
     .cart-bottom{
