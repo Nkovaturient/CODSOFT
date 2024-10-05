@@ -22,7 +22,7 @@ const BlogFilter = () => {
   const API_KEY = Config.TWINGLY_API; 
 
   const baseURL = import.meta.env.MODE === 'production'
-  ? '/.netlify/functions/fetchBlogs' 
+  ? 'https://api.twingly.com' 
   : '/api/blog/search/api/v3/search';  
 
 const handleSearch = async () => {
