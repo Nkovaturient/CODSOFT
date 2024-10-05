@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/.netlify/functions/fetchBlogs': {
+      '/.netlify/functions': {
         target: 'http://localhost:8888', 
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/.netlify\/functions/, ''),
